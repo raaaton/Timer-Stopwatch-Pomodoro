@@ -3,9 +3,9 @@
 <head>
 	<meta charset='UTF-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-	<link rel='stylesheet' href='styles.css'>
-	<link rel='icon' href='favicon.png' type='image/png'>
-	<title>Timer / Stopwatch / Pomodoro</title>
+	<link rel='stylesheet' href='src/styles.css'>
+	<link rel='icon' href='assets/favicon.png' type='image/png'>
+	<title>Pomodoro</title>
 </head>
 <body>
 	<div class='wrapper'>
@@ -19,10 +19,42 @@
 			</ul>
 		</nav>
 
+		<div class="timer-wrapper">
+			<h1>Timer</h1>
+			<div class="timer-container">
+				<div class="timer-display" id="timerDisplay"></div>
+				<div class="timer-controls">
+					<button id="startButton">Start</button>
+					<button id="pauseButton">Pause</button>
+					<button id="playButton">Play</button>
+					<button id="resetButton">Reset</button>
+				</div>
+			</div>
+			<div class="settings">
+				<div class="time-container">
+					<label for="hours">Hours</label>
+					<input type="number" id="hoursInput" value="0" min="0" max="23">
+					<label for="minutes">Minutes</label>
+					<input type="number" id="minutesInput" value="0" min="0" max="59">
+					<label for="seconds">Seconds</label>
+					<input type="number" id="secondsInput" value="0" min="0" max="59">
+				</div>
+				<div class="checkbox-container">
+					<div class="checkbox">
+						<input type="checkbox" id="alertCheckbox">
+						<label for="alertCheckbox">Alert</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" id="soundCheckbox">
+						<label for="soundCheckbox">Sound</label>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<footer>
 		<p class='copyright-p'>© 2025 Timer / Stopwatch / Pomodoro by Raton</p>
 	</footer>
-	<script src='script.js'></script>
+	<script src='src/timer.js'></script>
 </body>
 </html>

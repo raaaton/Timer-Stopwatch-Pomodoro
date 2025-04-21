@@ -83,7 +83,9 @@ nav li a.active::after {
 	animation: all 0.5s ease-in-out;
 }
 
-.timer-wrapper {
+.timer-wrapper,
+.stopwatch-wrapper,
+.pomodoro-wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -91,7 +93,9 @@ nav li a.active::after {
 	margin-top: 20px;
 }
 
-.timer-container {
+.timer-container,
+.stopwatch-container,
+.pomodoro-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -105,7 +109,9 @@ h1 {
 	margin-bottom: 0;
 }
 
-.timer-display {
+.timer-display,
+.stopwatch-display,
+.pomodoro-display {
 	font-size: 10rem;
 	padding: 20px 20px 0 20px; /* No margin bottom */
 }
