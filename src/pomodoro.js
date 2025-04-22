@@ -50,8 +50,6 @@ function tick() {
 
 	isAlertEnabled = alertCheckbox.checked;
 	isSoundEnabled = soundCheckbox.checked;
-
-	console.log("isWorking: " + isWorking);
 }
 
 function renderPomodoro() {

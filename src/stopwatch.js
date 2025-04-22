@@ -76,8 +76,8 @@ function startStopwatch() {
 function resetStopwatch() {
 	isRunning = false;
 	updateCounter();
-	time = 0;
 	clearInterval(intervalID);
+	time = 0;
 	renderStopwatch();
 }
 
