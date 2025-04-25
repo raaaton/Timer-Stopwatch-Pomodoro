@@ -41,6 +41,7 @@ if (onTimerPage) {
 	hoursInput = document.querySelector("#hoursInput");
 	minutesInput = document.querySelector("#minutesInput");
 	secondsInput = document.querySelector("#secondsInput");
+	minutesInput.value = "10"; // Set default values for the inputs (10 minutes)
 	startingHours = parseInt(hoursInput.value);
 	startingMinutes = parseInt(minutesInput.value);
 	startingSeconds = parseInt(secondsInput.value);
@@ -66,14 +67,13 @@ let isRunning = false;
 
 if (onPomodoroPage) { isWorking = true; }
 
-updateCountdown();
-setInterval(tick, 1);
-
 // Add event listeners to the click of the buttons
 startButton.addEventListener("click", function () { startTimer();});
 pauseButton.addEventListener("click", function () { pauseTimer();});
 playButton.addEventListener("click", function () { playTimer();});
 resetButton.addEventListener("click", function () { resetTimer();});
+
+setInterval(tick, 1);
 
 function tick() { // This function is called every millisecond to update the timer display and the buttons
 	renderTimer();
@@ -100,8 +100,6 @@ function tick() { // This function is called every millisecond to update the tim
 		isAlertEnabled = alertCheckbox.checked;
 		isSoundEnabled = soundCheckbox.checked;
 	}
-
-	console.log(onTimerPage ? "Timer" : onStopwatchPage ? "Stopwatch" : onPomodoroPage ? "Pomodoro" : "none");
 }
 
 function renderTimer() {
@@ -114,7 +112,7 @@ function renderTimer() {
 	let seconds = time % 60;
 
 	hours = hours < 10 ? "0" + hours : hours;
-	hours = hours == 0 ? "" : hours + ":";
+	hours = hours == 0 ? "" : hours + ":"; // If there isn't any hours, don't display them (only display minutes and seconds)
 	minutes = minutes < 10 ? "0" + minutes : minutes;
 	seconds = seconds < 10 ? "0" + seconds : seconds;
 
@@ -184,9 +182,7 @@ function resetTimer() {
 	isRunning = false;
 	isWorking = true; // Reset the pomodoro state to default values (working state)
 	time = onPomodoroPage ? isWorking ? 25 * 60 : 5 * 60 : onTimerPage ? startingHours * 3600 + startingMinutes * 60 + startingSeconds : 0; // If you're on the pomodoro page, set the time to 25 minutes if you're working and 5 minutes if you're on break. If you're on the timer page, set the time to the input values. If you're on the stopwatch page, set the time to 0.
-	updateCountdown();
 	clearInterval(intervalID); // Stops the countdown (repeat of the updateCountdown function every second)
-	if (onTimerPage || onPomodoroPage) { time++; }
 	renderTimer();
 	time = onStopwatchPage ? 0 : time; // If you're on the stopwatch page, set the time to 0 on reset.
 }
