@@ -26,14 +26,17 @@ if (document.querySelector("*[href='index.html'].active")) { // If you're on the
 	onTimerPage = true;
 	onStopwatchPage = false;
 	onPomodoroPage = false;
+	console.log("Timer page loaded.");
 } else if (document.querySelector("*[href='stopwatch.html'].active")) { // If you're on the stopwatch page : set onStopwatchPage to true
 	onTimerPage = false;
 	onStopwatchPage = true;
 	onPomodoroPage = false;
+	console.log("Stopwatch page loaded.");
 } else if (document.querySelector("*[href='pomodoro.html'].active")) { // If you're on the pomodoro page : set onPomodoroPage to true
 	onTimerPage = false;
 	onStopwatchPage = false;
 	onPomodoroPage = true;
+	console.log("Pomodoro page loaded.");
 }
 
 if (onTimerPage) {
