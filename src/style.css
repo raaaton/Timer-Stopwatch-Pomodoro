@@ -48,7 +48,7 @@ nav ul {
 	justify-content: end;
 	align-items: center;
 	padding: 40px;
-	margin: 0;
+	margin: 0 auto;
 }
 
 nav li a{
@@ -217,4 +217,37 @@ input[type="checkbox"], input[type="checkbox"] + label {
 footer {
 	color: var(--blueish-grey);
 	padding: 20px;
+}
+
+.copyright-p {
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	.timer-display,
+	.stopwatch-display,
+	.pomodoro-display {
+		font-size: 5rem;
+	}
+	
+	button {
+		padding: 0.5rem 1rem;
+		font-size: 0.8rem;
+	}
+	
+	input[type="number"] {
+		width: 20px;
+		height: 15px;
+		font-size: 0.8rem;
+	}
+	
+	.settings {
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.checkbox-container {
+		flex-direction: column;
+		align-items: center;
+	}
 }
