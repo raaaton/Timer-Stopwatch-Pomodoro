@@ -22,15 +22,15 @@ let onTimerPage = true;
 let onStopwatchPage = false;
 let onPomodoroPage = false;
 
-if (document.querySelector("*[href='index.html'].active" || "[href='/']")) { // If you're on the timer page : set onTimerPage to true
+if (document.querySelector("*[href='index.html'].active" || "[href='/'].active")) { // If you're on the timer page : set onTimerPage to true
 	onTimerPage = true;
 	onStopwatchPage = false;
 	onPomodoroPage = false;
-} else if (document.querySelector("*[href='stopwatch.html'].active" || "[href='/stopwatch']")) { // If you're on the stopwatch page : set onStopwatchPage to true
+} else if (document.querySelector("*[href='stopwatch.html'].active" || "[href='/stopwatch'].active")) { // If you're on the stopwatch page : set onStopwatchPage to true
 	onTimerPage = false;
 	onStopwatchPage = true;
 	onPomodoroPage = false;
-} else if (document.querySelector("*[href='pomodoro.html'].active" || "[href='/pomodoro']")) { // If you're on the pomodoro page : set onPomodoroPage to true
+} else if (document.querySelector("*[href='pomodoro.html'].active" || "[href='/pomodoro'].active")) { // If you're on the pomodoro page : set onPomodoroPage to true
 	onTimerPage = false;
 	onStopwatchPage = false;
 	onPomodoroPage = true;
