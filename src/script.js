@@ -26,7 +26,7 @@ if (document.querySelector("*[href='index.html'].active" || "[href='/'].active")
 	onTimerPage = true;
 	onStopwatchPage = false;
 	onPomodoroPage = false;
-} else if (document.querySelector("*[href='stopwatch.html'].active" || "[href='/stopwatch'].active")) { // If you're on the stopwatch page : set onStopwatchPage to true
+} else if (document.querySelector("*[href='stopwatch.html'].active") || document.querySelector("[href='/stopwatch'].active")) { // If you're on the stopwatch page : set onStopwatchPage to true
 	onTimerPage = false;
 	onStopwatchPage = true;
 	onPomodoroPage = false;
