@@ -67,8 +67,8 @@ nav li:first-child a {
 	font-weight: bolder;
 }
 
-nav li:last-child, nav li:last-child a {
-	margin-right: 0;
+nav ul li:last-of-type a {
+	margin-right: 0; /* Remove margin for last link */
 }
 
 nav li a.active::after {
